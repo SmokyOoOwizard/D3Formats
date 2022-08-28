@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3Formats", "D3Formats\D3Formats.csproj", "{65FD3AF9-DFC9-4413-98FC-3B804571E0E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65FD3AF9-DFC9-4413-98FC-3B804571E0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FD3AF9-DFC9-4413-98FC-3B804571E0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FD3AF9-DFC9-4413-98FC-3B804571E0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FD3AF9-DFC9-4413-98FC-3B804571E0E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0448F5F0-B95E-4EEA-BED6-4C2DB459A65E}
+	EndGlobalSection
+EndGlobal
