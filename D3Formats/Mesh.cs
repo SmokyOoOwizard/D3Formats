@@ -1,6 +1,6 @@
 ﻿namespace D3Formats
 {
-	public class Model
+	public class Mesh
 	{
 		public string? Name { get; set; }
 		public Vector[] Vertices { get; set; } = Array.Empty<Vector>();

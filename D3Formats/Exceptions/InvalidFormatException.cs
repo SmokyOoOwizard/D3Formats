@@ -1,4 +1,4 @@
-﻿namespace D3Formats
+﻿namespace D3Formats.Exceptions
 {
 	public class InvalidFormatException : Exception
 	{
