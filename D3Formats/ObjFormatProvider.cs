@@ -11,9 +11,9 @@ namespace D3Formats
 
 			var meshes = new List<Mesh>();
 
-			var vertices = new List<Vector>();
+			var vertices = new List<Vector3>();
 			var faces = new List<Face>();
-			var normals = new List<Vector>();
+			var normals = new List<Vector3>();
 
 			string? objName = null;
 			while (!reader.EndOfStream)
@@ -90,14 +90,8 @@ namespace D3Formats
 				for (int i = 0; i < model.Vertices.Length; i++)
 				{
 					var vertex = model.Vertices[i];
-					if (vertex.W != 1)
-					{
-						sb.AppendLine($"v {vertex.X} {vertex.Y} {vertex.Z} {vertex.W}");
-					}
-					else
-					{
-						sb.AppendLine($"v {vertex.X} {vertex.Y} {vertex.Z}");
-					}
+
+					sb.AppendLine($"v {vertex.X} {vertex.Y} {vertex.Z}");
 
 					if (i % WRITE_BUFFER_SIZE == WRITE_BUFFER_SIZE - 1)
 					{
@@ -181,7 +175,7 @@ namespace D3Formats
 			}
 		}
 
-		private static void ParseVertex(string str, ICollection<Vector> vertices)
+		private static void ParseVertex(string str, ICollection<Vector3> vertices)
 		{
 			var parts = str.Split(' ');
 			if (parts.Length < 4)
@@ -191,21 +185,7 @@ namespace D3Formats
 
 			if (double.TryParse(parts[1], out var x) && double.TryParse(parts[2], out var y) && double.TryParse(parts[3], out var z))
 			{
-				if (parts.Length >= 5)
-				{
-					if (double.TryParse(parts[4], out var w))
-					{
-						vertices.Add(new Vector(x, y, z, w));
-					}
-					else
-					{
-						throw new InvalidFormatException();
-					}
-				}
-				else
-				{
-					vertices.Add(new Vector(x, y, z, 1));
-				}
+				vertices.Add(new Vector3(x, y, z));
 			}
 			else
 			{
@@ -269,7 +249,7 @@ namespace D3Formats
 
 			faces.Add(new Face() { Indices = indices.ToArray() });
 		}
-		private static void ParseNormal(string str, ICollection<Vector> normals)
+		private static void ParseNormal(string str, ICollection<Vector3> normals)
 		{
 			var parts = str.Split(' ');
 			if (parts.Length < 4)
@@ -279,7 +259,7 @@ namespace D3Formats
 
 			if (double.TryParse(parts[1], out var x) && double.TryParse(parts[2], out var y) && double.TryParse(parts[3], out var z))
 			{
-				normals.Add(new Vector(x, y, z));
+				normals.Add(new Vector3(x, y, z));
 			}
 			else
 			{

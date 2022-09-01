@@ -3,8 +3,8 @@
 	public class Mesh
 	{
 		public string? Name { get; set; }
-		public Vector[] Vertices { get; set; } = Array.Empty<Vector>();
+		public Vector3[] Vertices { get; set; } = Array.Empty<Vector3>();
 		public Face[] Faces { get; set; } = Array.Empty<Face>();
-		public Vector[] Normals { get; set; } = Array.Empty<Vector>();
+		public Vector3[] Normals { get; set; } = Array.Empty<Vector3>();
 	}
 }
